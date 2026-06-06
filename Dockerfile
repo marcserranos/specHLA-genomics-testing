@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
     wget git curl build-essential cmake \
     perl pkg-config zlib1g-dev libbz2-dev \
     liblzma-dev libcurl4-openssl-dev libssl-dev \
+    libarpack2-dev liblapack-dev libblas-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Create working directory
@@ -21,7 +22,7 @@ RUN conda config --add channels bioconda && \
     conda config --add channels conda-forge && \
     conda env create --prefix=/opt/spechla_env -f environment_docker.yml
 
-# Make binaries executable
+# Make binaries executable (skip index.sh since bowtie2 indexes already exist)
 RUN chmod +x -R bin/
 
 # Activate environment in shell
