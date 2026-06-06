@@ -21,7 +21,7 @@ This repository contains the pipeline and analytical frameworks for executing fu
 ### Aim 2: Non-Linear Polygenic Risk Scores (PRS) Using HLA
 * **The Problem with Standard PRS:** Traditional PRS architectures assume purely additive, linear effects, calculating a basic weighted sum of variants derived from univariate, single-variant GWAS models[cite: 1]. This completely ignores the dense, highly correlated haplotype blocks unique to the HLA region[cite: 1].
 * **Our Approach:** Model non-linear interactions and epistasis within the HLA region[cite: 1]. The pipeline will execute:
-  1. Fine-mapping to isolate independent, non-linkage-driven variant signals[cite: 1].
+  1. Fine-mapping to  isolate independent, non-linkage-driven variant signals[cite: 1].
   2. Training non-linear models (such as Elastic-Net, LASSO, custom tabular architectures, and Gradient-Boosted Trees like CatBoost) to learn complex variant-variant interactions[cite: 1].
 * **Target Phenotypes:** Autoimmune diseases with large HLA effect profiles, including Celiac Disease, Type 1 Diabetes (T1D), Psoriasis, and Multiple Sclerosis (MS)[cite: 1].
 
