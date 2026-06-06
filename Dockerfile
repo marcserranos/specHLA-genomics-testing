@@ -13,10 +13,13 @@ WORKDIR /opt/spechla
 # Clone SpecHLA from source
 RUN git clone https://github.com/deepomicslab/SpecHLA.git --depth 1 .
 
+# Copy custom environment file
+COPY sandbox/SpecHLA/environment_docker.yml .
+
 # Configure conda and create environment
 RUN conda config --add channels bioconda && \
     conda config --add channels conda-forge && \
-    mamba env create --prefix=/opt/spechla_env -f environment.yml
+    conda env create --prefix=/opt/spechla_env -f environment_docker.yml
 
 # Make binaries executable
 RUN chmod +x -R bin/
